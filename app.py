@@ -18,105 +18,19 @@ AREAS = {
                 "level": "Beginner",
                 "desc": "A series of stretches designed to increase flexibility in the lower back.",
                 "exercises": [
-                    {"name": "Cat Cow",          "seconds": 30, "pose": "cat_cow",       "color": "#8C3B4A"},
-                    {"name": "Downward Dog",      "seconds": 30, "pose": "downward_dog",  "color": "#3E9B7A"},
-                    {"name": "Lunge",             "seconds": 45, "pose": "lunge",         "color": "#C7D66B"},
-                    {"name": "Reverse Lunge",     "seconds": 45, "pose": "reverse_lunge", "color": "#1F5C4B"},
-                    {"name": "Butterfly",         "seconds": 30, "pose": "butterfly",     "color": "#E8B4C8"},
-                    {"name": "Knees-to-chest",    "seconds": 30, "pose": "knees_chest",   "color": "#E0B84A"},
-                    {"name": "Spinal Twist",      "seconds": 45, "pose": "spinal_twist",  "color": "#5A5FA8"},
-                    {"name": "Lying Figure Four", "seconds": 45, "pose": "figure_four",   "color": "#D4772E"},
+                    {"name": "Cat Cow",          "seconds": 30, "emoji": "🐈", "color": "#8C3B4A"},
+                    {"name": "Downward Dog",      "seconds": 30, "emoji": "🧘", "color": "#3E9B7A"},
+                    {"name": "Lunge",             "seconds": 45, "emoji": "🤸", "color": "#C7D66B"},
+                    {"name": "Reverse Lunge",     "seconds": 45, "emoji": "🤸", "color": "#1F5C4B"},
+                    {"name": "Butterfly",         "seconds": 30, "emoji": "🦋", "color": "#E8B4C8"},
+                    {"name": "Knees-to-chest",    "seconds": 30, "emoji": "🧍", "color": "#E0B84A"},
+                    {"name": "Spinal Twist",      "seconds": 45, "emoji": "🌀", "color": "#5A5FA8"},
+                    {"name": "Lying Figure Four", "seconds": 45, "emoji": "🦵", "color": "#D4772E"},
                 ],
             },
         ],
     },
 }
-
-# ---------------------------------------------------------------------------
-# ORIGINAL HAND-DRAWN STICK-FIGURE ICONS (inline SVG, simple flat style)
-# Drawn from scratch — not copied from any reference app.
-# Each is a minimal white-stroke figure on a transparent 100x100 canvas.
-# ---------------------------------------------------------------------------
-POSE_SVGS = {
-    "cat_cow": """
-        <circle cx="30" cy="35" r="7"/>
-        <path d="M30 42 Q50 30 75 42" fill="none"/>
-        <path d="M75 42 L82 60" fill="none"/>
-        <path d="M30 42 L25 60" fill="none"/>
-        <path d="M40 55 L38 78" fill="none"/>
-        <path d="M65 55 L67 78" fill="none"/>
-    """,
-    "downward_dog": """
-        <circle cx="78" cy="60" r="7"/>
-        <path d="M78 65 L35 30" fill="none"/>
-        <path d="M35 30 L20 55" fill="none"/>
-        <path d="M35 30 L48 50" fill="none"/>
-        <path d="M78 65 L60 78" fill="none"/>
-        <path d="M78 65 L88 80" fill="none"/>
-    """,
-    "lunge": """
-        <circle cx="45" cy="20" r="7"/>
-        <path d="M45 27 L48 55" fill="none"/>
-        <path d="M48 55 L30 80" fill="none"/>
-        <path d="M48 55 L72 62" fill="none"/>
-        <path d="M45 30 L25 20" fill="none"/>
-        <path d="M45 35 L68 25" fill="none"/>
-    """,
-    "reverse_lunge": """
-        <circle cx="42" cy="22" r="7"/>
-        <path d="M42 29 L45 55" fill="none"/>
-        <path d="M45 55 L70 45" fill="none"/>
-        <path d="M45 55 L35 82" fill="none"/>
-        <path d="M42 32 L60 20" fill="none"/>
-        <path d="M42 38 L22 45" fill="none"/>
-    """,
-    "butterfly": """
-        <circle cx="50" cy="22" r="7"/>
-        <path d="M50 29 L50 55" fill="none"/>
-        <path d="M50 55 L30 70" fill="none"/>
-        <path d="M50 55 L70 70" fill="none"/>
-        <path d="M30 70 L50 75" fill="none"/>
-        <path d="M70 70 L50 75" fill="none"/>
-        <path d="M50 35 L30 45" fill="none"/>
-        <path d="M50 35 L70 45" fill="none"/>
-    """,
-    "knees_chest": """
-        <circle cx="25" cy="55" r="7"/>
-        <path d="M25 62 L55 70" fill="none"/>
-        <path d="M55 70 L55 45" fill="none"/>
-        <path d="M55 45 L40 30" fill="none"/>
-        <path d="M55 45 L40 55" fill="none"/>
-        <path d="M25 60 L35 75" fill="none"/>
-    """,
-    "spinal_twist": """
-        <circle cx="35" cy="30" r="7"/>
-        <path d="M35 37 L45 65" fill="none"/>
-        <path d="M45 65 L25 78" fill="none"/>
-        <path d="M45 65 L68 78" fill="none"/>
-        <path d="M38 45 L70 35" fill="none"/>
-        <path d="M38 45 L18 55" fill="none"/>
-    """,
-    "figure_four": """
-        <circle cx="20" cy="45" r="7"/>
-        <path d="M20 52 L50 55" fill="none"/>
-        <path d="M50 55 L75 45" fill="none"/>
-        <path d="M50 55 L70 68" fill="none"/>
-        <path d="M70 68 L55 72" fill="none"/>
-        <path d="M20 50 L15 68" fill="none"/>
-    """,
-}
-
-
-def pose_icon(pose_key, color, size=54):
-    body = POSE_SVGS.get(pose_key, "")
-    return f"""
-    <div class="icon-circle" style="background:{color}">
-      <svg width="{int(size*0.62)}" height="{int(size*0.62)}" viewBox="0 0 100 100"
-           stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="white">
-        {body}
-      </svg>
-    </div>
-    """
 
 # ---------------------------------------------------------------------------
 # STYLE
@@ -275,7 +189,7 @@ def page_routine():
 
     for i, ex in enumerate(routine["exercises"]):
         c1, c2, c3, c4, c5 = st.columns([1, 4, 1, 1.3, 1])
-        c1.markdown(pose_icon(ex["pose"], ex["color"]), unsafe_allow_html=True)
+        c1.markdown(f"<div class='icon-circle' style='background:{ex['color']}'>{ex['emoji']}</div>", unsafe_allow_html=True)
         c2.markdown(f"<div style='padding-top:14px;font-weight:600'>{ex['name']}</div>", unsafe_allow_html=True)
         if c3.button("−", key=f"minus_{i}"):
             durations[i] = max(5, durations[i] - 5)
@@ -341,11 +255,7 @@ def page_play():
         st.session_state.playing_idx += 1
         st.rerun()
 
-    st.markdown(
-        f"<div style='display:flex;justify-content:center;transform:scale(1.6);margin:18px 0 10px;'>{pose_icon(ex['pose'], ex['color'])}</div>",
-        unsafe_allow_html=True,
-    )
-    st.markdown(f"<h1 style='text-align:center;font-size:1.8em;margin-top:4px'>{ex['name']}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align:center;font-size:2.2em;margin-top:10px'>{ex['emoji']} {ex['name']}</h1>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;color:#777'>Up next: {next_name}</div>", unsafe_allow_html=True)
 
     placeholder = st.empty()
